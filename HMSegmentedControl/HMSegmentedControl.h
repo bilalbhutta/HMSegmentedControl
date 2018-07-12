@@ -252,6 +252,11 @@ typedef NS_ENUM(NSInteger, HMSegmentedControlImagePosition) {
  */
 @property (nonatomic) BOOL shouldAnimateUserSelection;
 
+/**
+ Default is YES. Set to NO to disable selection to move to center during selection if possible.
+ */
+@property (nonatomic) BOOL shouldMoveSelectionToCenter;
+
 - (id)initWithSectionTitles:(NSArray<NSString *> *)sectiontitles;
 - (id)initWithSectionImages:(NSArray<UIImage *> *)sectionImages sectionSelectedImages:(NSArray<UIImage *> *)sectionSelectedImages;
 - (instancetype)initWithSectionImages:(NSArray<UIImage *> *)sectionImages sectionSelectedImages:(NSArray<UIImage *> *)sectionSelectedImages titlesForSections:(NSArray<NSString *> *)sectiontitles;

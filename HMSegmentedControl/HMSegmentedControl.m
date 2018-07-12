@@ -151,6 +151,7 @@
     self.borderWidth = 1.0f;
     
     self.shouldAnimateUserSelection = YES;
+    self.shouldMoveSelectionToCenter = YES;
     
     self.selectionIndicatorArrowLayer = [CALayer layer];
     self.selectionIndicatorStripLayer = [CALayer layer];
@@ -850,8 +851,10 @@
     
     
     CGRect rectToScrollTo = rectForSelectedIndex;
-    rectToScrollTo.origin.x -= selectedSegmentOffset;
-    rectToScrollTo.size.width += selectedSegmentOffset * 2;
+    if (self.shouldMoveSelectionToCenter) {
+        rectToScrollTo.origin.x -= selectedSegmentOffset;
+        rectToScrollTo.size.width += selectedSegmentOffset * 2;
+    }
     [self.scrollView scrollRectToVisible:rectToScrollTo animated:animated];
 }
 
