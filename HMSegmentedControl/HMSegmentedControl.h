@@ -246,7 +246,14 @@ typedef NS_ENUM(NSInteger, HMSegmentedControlImagePosition) {
 @property (nonatomic, readwrite) UIEdgeInsets segmentEdgeInset;
 
 @property (nonatomic, readwrite) UIEdgeInsets enlargeEdgeInset;
-
+    
+/**
+ Inset top edge of segment label.
+ 
+ Default is 0.0
+ */
+@property (nonatomic, readwrite) CGFloat segmentLabelTopEdgeInset;
+    
 /**
  Default is YES. Set to NO to disable animation during user selection.
  */

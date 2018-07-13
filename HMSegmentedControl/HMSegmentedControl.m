@@ -326,6 +326,9 @@
             // Fix rect position/size to avoid blurry labels
             rect = CGRectMake(ceilf(rect.origin.x), ceilf(rect.origin.y), ceilf(rect.size.width), ceilf(rect.size.height));
             
+            // top inset
+            rect.origin = CGPointMake(rect.origin.x, rect.origin.y + self.segmentLabelTopEdgeInset);
+            
             CATextLayer *titleLayer = [CATextLayer layer];
             titleLayer.frame = rect;
             titleLayer.alignmentMode = kCAAlignmentCenter;
